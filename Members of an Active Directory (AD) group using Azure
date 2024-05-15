@@ -1,0 +1,26 @@
+#-------------Using Azure PowerShell-------------
+
+# Install the AzureAD module
+Install-Module -Name AzureAD
+
+# Connect to Azure AD
+Connect-AzureAD
+
+# Get the group
+$group = Get-AzureADGroup -SearchString "YourGroupName"
+
+# Get the group ID
+$groupId = $group.ObjectId
+
+# Get the members of the group
+Get-AzureADGroupMember -ObjectId $groupId
+
+
+#---------------------Using Azure CLI----------
+az login
+
+# Get the group ID
+groupId=$(az ad group show --group "YourGroupName" --query objectId --output tsv)
+
+# Get the members of the group
+az ad group member list --group $groupId --query [].{Name:displayName, Email:mail}
