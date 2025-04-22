@@ -1,0 +1,5 @@
+----create Multi-Column Distributed Objects
+
+ALTER DATABASE SCOPED CONFIGURATION SET DW_COMPATIBILITY_LEVEL = 50;
+
+https://techcommunity.microsoft.com/t5/azure-synapse-analytics-blog/multi-column-distribution-for-dedicated-sql-pools-is-now-ga/ba-p/3774529

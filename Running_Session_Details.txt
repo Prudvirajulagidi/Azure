@@ -1,0 +1,2 @@
+
+SELECT * FROM sys.dm_pdw_exec_requests WHERE status = 'running' ORDER BY total_elapsed_time desc;
